@@ -1,7 +1,11 @@
 import board
 
-def is_board_full(board):
-    return ' ' not in board.get_data()[0]
+def is_board_full(board_):
+    '''
+    >>> is_board_full(board.Board(5).get_data())
+    False
+    '''
+    return ' ' not in board_.get_data()[0]
 
 # function that checks user input (type, range if num, etc.)
 def check_input(msg, correct, err_msg, type_=str):
@@ -16,6 +20,10 @@ def check_input(msg, correct, err_msg, type_=str):
         print(err_msg)
 
 def greet_player():
+    '''
+    >>> greet_player()
+    Welcome to the game!
+    '''
     print('Welcome to the game!')
 
 # if prompted with 'N' in load_or_create_game create new game and initialize correct values to variables
@@ -69,7 +77,7 @@ def load_game():
     return data
 
 # save game to file if prompted with 's' in ask_continue
-def save_game(size, score_o, score_x, board):
+def save_game(size, score_o, score_x, board_):
     filename = check_input(
         'Enter filename: ',
         lambda file: True,
@@ -79,5 +87,5 @@ def save_game(size, score_o, score_x, board):
 
     with open(filename, 'w') as file:
         for i in range(size):
-            print(','.join(board[i]), file=file)
+            print(','.join(board_[i]), file=file)
         print(score_o, score_x, sep=",", file=file)
