@@ -1,2 +1,2 @@
 # cs_python_1
-project for 1st semester: introduction to cs @ aueb, python lab
+python lab project for subject: introduction to cs @ aueb (1st semester)
