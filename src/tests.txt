@@ -1,0 +1,69 @@
+>>> from game import *
+>>> from board import *
+>>> from utils import *
+>>> # start
+>>> # Game.__init__
+>>> game_ = Game()
+>>> game_.turn
+'1'
+>>> game_.pawn
+'O'
+>>> game_.winner
+>>> # Board.__init__
+>>> board_ = Board(5)
+>>> board_.size = 5
+>>> board_ = Board(6)
+>>> board_.size = 6
+>>> # Board.insert
+>>> board = Board(5)
+>>> board.insert('X', 1)
+0
+>>> board.insert('O', 0)
+2
+>>> board.insert('O', 1)
+0
+>>> board.insert('X', 1)
+0
+>>> board.insert('O', 1)
+0
+>>> board.insert('X', 1)
+0
+>>> board.insert('O', 1)
+1
+>>> board.insert('X', -100)
+2
+>>> # Board.get_winner
+>>> board = Board(5)
+>>> board.get_winner() == None
+True
+>>> board.insert('X', 1)
+0
+>>> board.insert('X', 1)
+0
+>>> board.insert('X', 1)
+0
+>>> board.insert('X', 1)
+0
+>>> board.get_winner() == 'X'
+True
+>>> # Board.is_full
+>>> import board
+>>> board.Board(5).is_full()
+False
+>>> # Board.get_data
+>>> board_ = Board(5)
+>>> board_.get_data()
+[[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']]
+>>> # Board.__str__
+    1    2    3    4    5
+---------------------------
+A|    |    |    |    |    |
+B|    |    |    |    |    |
+C|    |    |    |    |    |
+D|    |    |    |    |    |
+E|    |    |    |    |    |
+---------------------------
+>>> # utils.greet_player
+>>> greet_player()
+Welcome to the game!
+>>> # end
